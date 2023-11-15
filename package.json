@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "stylelint-order": "^6.0.3"
+  }
+}

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <section class="menu">
+        <aside>
+            <div class="nav-header">
+                <h4>СТВОРЮЄМО КРАСУ В КОЖНОМУ САНТИМЕТРІ</h4>
+            </div>
+            <ul>
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Про клініку</a></li>
+                <li><a href="#">Естетична косметологія</li>
+                <li class="mega-menu_open" onclick="open_menu(0)">Пластична хірургія</li>
+                <li class="mega-menu_open" onclick="open_menu(1)">Гінекологія</li>
+                <li class="mega-menu_open" onclick="open_menu(2)">Навчання</li>
+                <li><a href="#">Наші товари</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+            <div class="nav-footer">
+                <button class="btn-primary">Записатись на процедуру</button>
+                <h5><span>Працюємо Пн-Нд:</span> з 9:00 до 20:00</h5>
+                <div>
+                    <h5>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+                        <path d="M6 0.00817871C3.0975 0.00817871 0.75 2.34452 0.75 5.23322C0.75 9.152 6 14.9369 6 14.9369C6 14.9369 11.25 9.152 11.25 5.23322C11.25 2.34452 8.9025 0.00817871 6 0.00817871ZM6 7.09931C4.965 7.09931 4.125 6.2633 4.125 5.23322C4.125 4.20314 4.965 3.36713 6 3.36713C7.035 3.36713 7.875 4.20314 7.875 5.23322C7.875 6.2633 7.035 7.09931 6 7.09931Z" fill="#F09B64"/>
+                        </svg>
+                        м. Київ, вул. Героїв Майдану, 5
+                    </h5>
+                    <div class="nav-footer__phone-number">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <rect y="0.00012207" width="28" height="28" fill="url(#pattern0)"/>
+                            <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_0_482" transform="scale(0.00195312)"/>
+                            </pattern>
+                            <image id="image0_0_482" width="512" height="512" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAABN2lDQ1BBZG9iZSBSR0IgKDE5OTgpAAAokZWPv0rDUBSHvxtFxaFWCOLgcCdRUGzVwYxJW4ogWKtDkq1JQ5ViEm6uf/oQjm4dXNx9AidHwUHxCXwDxamDQ4QMBYvf9J3fORzOAaNi152GUYbzWKt205Gu58vZF2aYAoBOmKV2q3UAECdxxBjf7wiA10277jTG+38yH6ZKAyNguxtlIYgK0L/SqQYxBMygn2oQD4CpTto1EE9AqZf7G1AKcv8ASsr1fBBfgNlzPR+MOcAMcl8BTB1da4Bakg7UWe9Uy6plWdLuJkEkjweZjs4zuR+HiUoT1dFRF8jvA2AxH2w3HblWtay99X/+PRHX82Vun0cIQCw9F1lBeKEuf1UYO5PrYsdwGQ7vYXpUZLs3cLcBC7dFtlqF8hY8Dn8AwMZP/fNTP8gAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAXIaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA2LjAtYzAwMiA3OS4xNjQ0ODgsIDIwMjAvMDcvMTAtMjI6MDY6NTMgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMi4wIChXaW5kb3dzKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjMtMDktMzBUMTI6MzY6NDUrMDM6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTA5LTMwVDEyOjM3OjMzKzAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTA5LTMwVDEyOjM3OjMzKzAzOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpmMzRhMzQ0ZC1mMWQ4LWIxNGQtOTJlOS1mODIyNTRiYTdiODMiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo2NjU4OTdlOC0wNzVmLTI3NGYtODRiYS02M2Y1ODRmZDYzN2MiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDA5NzYzNy00ZGNiLTVkNGMtYmJmNC1hMjA5OWY0ZGNjZDQiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjMwMDk3NjM3LTRkY2ItNWQ0Yy1iYmY0LWEyMDk5ZjRkY2NkNCIgc3RFdnQ6d2hlbj0iMjAyMy0wOS0zMFQxMjozNjo0NSswMzowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIyLjAgKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDpmMzRhMzQ0ZC1mMWQ4LWIxNGQtOTJlOS1mODIyNTRiYTdiODMiIHN0RXZ0OndoZW49IjIwMjMtMDktMzBUMTI6Mzc6MzMrMDM6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyMi4wIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9y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"/>
+                            </defs>
+                        </svg>
+                        <a href="tel://+38 (099) 999-99-99">+38 (099) 999-99-99</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    
+        <div class="mega-menu">
+            <div class="mega-menu__header">
+                <div>
+                    <div class="mega-menu__header-img">
+                        <img width="100%" height="100%" src="assets/images/icons/cubes-icon.png" alt="">
+                    </div>
+                    <h5>Усі послуги з розділу Пластична хірургія:</h5>
+                </div>
+                <h4 class="close"><span>&#x2716;</span>Закрити</h4>
+            </div>
+            <div class="mega-menu__content">
+                <div class="mega-menu__content-col">
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mega-menu__content-col">
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mega-menu__content-col">
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="mega-menu">
+            <div class="mega-menu__header">
+                <div>
+                    <div class="mega-menu__header-img">
+                        <img width="100%" height="100%" src="assets/images/icons/cubes-icon.png" alt="">
+                    </div>
+                    <h5>Усі послуги з розділу Гінекологія:</h5>
+                </div>
+                <h4 class="close"><span>&#x2716;</span>Закрити</h4>
+            </div>
+            <div class="mega-menu__content">
+                <div class="mega-menu__content-col">
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mega-menu__content-col">
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mega-menu__content-col">
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header"><a href="#">Пластична хірургія</a></h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="mega-menu">
+            <div class="mega-menu__header">
+                <div>
+                    <div class="mega-menu__header-img">
+                        <img width="100%" height="100%" src="assets/images/icons/cubes-icon.png" alt="">
+                    </div>
+                    <h5>Усі послуги з розділу Навчання:</h5>
+                </div>
+                <h4 class="close"><span>&#x2716;</span>Закрити</h4>
+            </div>
+            <div class="mega-menu__content">
+                <div class="mega-menu__content-col">
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header">Пластична хірургія</h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header">Пластична хірургія</h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header">Пластична хірургія</h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mega-menu__content-col">
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header">Пластична хірургія</h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header">Пластична хірургія</h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header">Пластична хірургія</h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mega-menu__content-col">
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header">Пластична хірургія</h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header">Пластична хірургія</h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu__submenu">
+                        <h4 class="mega-menu__content-header">Пластична хірургія</h4>
+    
+                        <ul>
+                            <li><a href="#">Аугментаційна мамопластика</a></li>
+                            <li><a href="#">Підтяжка грудей</a></li>
+                            <li><a href="#">Фейсліфтинг</a></li>
+                            <li><a href="#">Ендоскопічна підтяжка середньої третини обличчя</a></li>
+                            <li><a href="#">Абдомінопластика з транспозицією пупка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
